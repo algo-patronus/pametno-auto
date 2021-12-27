@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+<font
+    android:font="@font/plaguard" />
+    <font
+        android:font="@font/robus" />
+    <font
+        android:font="@font/target1" />
+</font-family>
