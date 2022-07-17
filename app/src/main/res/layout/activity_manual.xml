@@ -8,7 +8,7 @@
     tools:context=".Manual">
 
     <ImageView
-        android:id="@+id/backgoundManual"
+        android:id="@+id/backgroundManual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
@@ -18,21 +18,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/manualr" />
+        app:srcCompat="@drawable/manualr1" />
 
     <TextView
         android:id="@+id/ManualControl"
         android:layout_width="302dp"
         android:layout_height="91dp"
         android:layout_marginStart="167dp"
-        android:layout_marginLeft="167dp"
         android:layout_marginTop="320dp"
         android:layout_marginBottom="320dp"
         android:fontFamily="@font/plaguard"
         android:rotation="90"
-        android:text="MANUAL CONTROL"
+        android:text="@string/manual_control"
         android:textColor="@color/orange"
-        android:textSize="34dp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.172"
@@ -41,53 +40,15 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
-        android:id="@+id/Up"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="158dp"
-        android:layout_marginLeft="158dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="178dp"
-        android:layout_marginRight="178dp"
-        android:layout_marginBottom="568dp"
-        android:background="@android:color/transparent"
-        android:rotation="180"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow3" />
-
-    <ImageButton
-        android:id="@+id/Down"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
-        android:layout_marginTop="515dp"
-        android:layout_marginEnd="180dp"
-        android:layout_marginRight="180dp"
-        android:layout_marginBottom="141dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow3" />
-
-    <ImageButton
         android:id="@+id/Left"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="324dp"
-        android:layout_marginEnd="294dp"
-        android:layout_marginRight="294dp"
-        android:layout_marginBottom="332dp"
-        android:background="@android:color/transparent"
-        android:orientation="vertical"
-        android:rotation="90"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="178dp"
+        android:layout_marginBottom="568dp"
+        android:background="@drawable/button_selector"
+        android:rotation="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,13 +59,46 @@
         android:id="@+id/Right"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="515dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="141dp"
+        android:background="@drawable/button_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow3" />
+
+    <ImageButton
+        android:id="@+id/Down"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="42dp"
+
+        android:layout_marginTop="324dp"
+        android:layout_marginEnd="294dp"
+
+        android:layout_marginBottom="332dp"
+        android:background="@drawable/button_selector"
+        android:orientation="vertical"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow3" />
+
+    <ImageButton
+        android:id="@+id/Up"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_marginStart="255dp"
-        android:layout_marginLeft="255dp"
         android:layout_marginTop="334dp"
         android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
         android:layout_marginBottom="343dp"
-        android:background="@android:color/transparent"
+        android:background="@drawable/button_selector"
+
         android:rotation="270"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
