@@ -2,6 +2,8 @@ package com.example.carcontrol;
 
 import static android.content.ContentValues.TAG;
 
+
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,7 +27,7 @@ import java.io.UnsupportedEncodingException;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button automatic,manual;
+    Button automatic,manual, stopp;
 
     String topic,clientId;
     IMqttToken token;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         automatic = (Button) findViewById(R.id.automatic);
         manual = (Button) findViewById(R.id.manual);
+        stopp = (Button) findViewById(R.id.stop);
 
         clientId = MqttClient.generateClientId();
         topic="test/topic/carcontrol";
@@ -123,8 +126,56 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        stopp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    token = client.connect();
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+                token.setActionCallback(new IMqttActionListener(){
+                    @Override
+                    public void onSuccess(IMqttToken asyncActionToken) {
+                        // We are connected
 
-        
+                        Log.d(TAG, "onSuccess");
+                        Toast.makeText(MainActivity.this, "connected", Toast.LENGTH_SHORT).show();
+                        String payload = "S";
+                        byte[] encodedPayload = new byte[0];
+                        try {
+                            encodedPayload = payload.getBytes("UTF-8");
+                            MqttMessage message = new MqttMessage(encodedPayload);
+                            client.publish(topic, message);
+                        } catch (UnsupportedEncodingException | MqttException e) {
+                            e.printStackTrace();
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                        Toast.makeText(MainActivity.this, "not connected", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+            }
+        });
+
+
+        PendingIntent pendingIntent = null;
+        Intent notificationIntent;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+            pendingIntent = PendingIntent.getActivity
+                    (this, 0, notificationIntent, PendingIntent.FLAG_MUTABLE);
+        }
+        else
+        {
+            pendingIntent = PendingIntent.getActivity
+                    (this, 0, notificationIntent, PendingIntent.FLAG_ONE_SHOT);
+        }
 
         if (Build.VERSION.SDK_INT >= 21) {
             Window window = this.getWindow();
@@ -132,7 +183,10 @@ public class MainActivity extends AppCompatActivity {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             ((Window) window).setStatusBarColor(this.getResources().getColor(R.color.orange));
             getWindow().setNavigationBarColor(getResources().getColor(R.color.orange));
-        } }
+        }
+
+
+    }
 
 
 

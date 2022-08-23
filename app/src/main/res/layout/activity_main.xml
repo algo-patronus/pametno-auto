@@ -7,6 +7,26 @@
     tools:context=".MainActivity">
 
 
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="222dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="149dp"
+        android:layout_marginRight="147dp"
+        android:layout_marginBottom="2dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/robus"
+        android:text="STOP"
+        android:textColor="#F6EDED"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.721" />
+
     <ImageView
         android:id="@+id/background"
         android:layout_width="fill_parent"
@@ -18,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/Car"
@@ -94,6 +114,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/manual2"
+        android:layout_width="222dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="393dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="275dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/robus"
+        android:text="Manual"
+        android:textColor="#F6EDED"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
